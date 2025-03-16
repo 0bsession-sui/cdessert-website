@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C Dessert - The best Hong Kong dessert spot in Wan Chai. Try our famous Mango Pomelo Sago and Egg Waffles!">
+    <meta name="keywords" content="Hong Kong dessert, Mango Pomelo Sago, Egg Waffles, Wan Chai sweets">
+    <title>C Dessert | Hong Kong's Sweetest Spot</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; background-color: #ffffff; }
+        header { background: url('title.png') center/cover no-repeat; height: 250px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; font-weight: bold; }
+        nav { background-color: rgb(204,231,12); padding: 12px; border-bottom: 4px solid darkgreen; }
+        nav a { margin: 0 15px; color: white; text-decoration: none; font-size: 18px; transition: color 0.3s; }
+        nav a:hover { color: darkgreen; }
+        .container { padding: 20px; }
+        .feature-slider { display: flex; justify-content: center; align-items: center; position: relative; }
+        .feature-slide { display: none; text-align: center; }
+        .feature-slide img { width: 80%; max-width: 600px; border-radius: 10px; cursor: pointer; }
+        .feature-caption { margin-top: 10px; font-size: 18px; font-weight: bold; }
+        .menu img { width: 80%; max-width: 600px; margin: 20px 0; }
+        footer { background-color: darkgreen; color: white; padding: 10px; border-top: 4px solid rgb(204,231,12); }
+        .store-info { max-width: 800px; margin: auto; text-align: left; font-size: 14px; line-height: 1.6; background: rgba(204, 231, 12, 0.3); padding: 15px; border-radius: 10px; }
+        .menu-slider button { background-color: rgba(204, 231, 12, 0.8); border: none; padding: 10px; cursor: pointer; font-size: 16px; position: absolute; top: 50%; transform: translateY(-50%); color: darkgreen; }
+        .menu-slider button:hover { background-color: darkgreen; color: white; }
+        .prev { left: 0; }
+        .next { right: 0; }
+    </style>
+    <script>
+        let currentSlide = 0;
+        function showSlide(index) {
+            let slides = document.querySelectorAll('.feature-slide');
+            if (index >= slides.length) { currentSlide = 0; }
+            if (index < 0) { currentSlide = slides.length - 1; }
+            slides.forEach(slide => slide.style.display = 'none');
+            slides[currentSlide].style.display = 'block';
+        }
+        function nextSlide() { currentSlide++; showSlide(currentSlide); }
+        function prevSlide() { currentSlide--; showSlide(currentSlide); }
+        window.onload = () => { showSlide(currentSlide); };
+    </script>
+</head>
+<body>
+    <header>
+        C Dessert - Hong Kong's Sweetest Spot
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container" id="features">
+        <h2>特色展示</h2>
+        <div class="feature-slider">
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <div class="feature-slide">
+                <img src="杨枝甘露.png" alt="杨枝甘露" onclick="window.open(this.src, '_blank')">
+                <div class="feature-caption">杨枝甘露</div>
+            </div>
+            <div class="feature-slide">
+                <img src="椰汁麻薯仙草冻.png" alt="椰汁麻薯仙草冻" onclick="window.open(this.src, '_blank')">
+                <div class="feature-caption">椰汁麻薯仙草冻</div>
+            </div>
+            <div class="feature-slide">
+                <img src="龙眼椰果冰.png" alt="龙眼椰果冰" onclick="window.open(this.src, '_blank')">
+                <div class="feature-caption">龙眼椰果冰</div>
+            </div>
+            <div class="feature-slide">
+                <img src="榴莲.png" alt="榴莲椰果冰" onclick="window.open(this.src, '_blank')">
+                <div class="feature-caption">榴莲椰果冰</div>
+            </div>
+            <div class="feature-slide">
+                <img src="芒果西米露.png" alt="芒果西米露" onclick="window.open(this.src, '_blank')">
+                <div class="feature-caption">芒果西米露</div>
+            </div>
+            <div class="feature-slide">
+                <img src="杏汁蜜瓜冰.png" alt="杏汁蜜瓜冰" onclick="window.open(this.src, '_blank')">
+                <div class="feature-caption">杏汁蜜瓜冰</div>
+            </div>
+            <div class="feature-slide">
+                <img src="椰汁麻薯仙草冻.png" alt="椰汁麻薯仙草冻" onclick="window.open(this.src, '_blank')">
+                <div class="feature-caption">椰汁麻薯仙草冻</div>
+            </div>
+            <div class="feature-slide">
+                <img src="杞子圆肉雪莲子炖桃胶.png" alt="杞子圆肉雪莲子炖桃胶" onclick="window.open(this.src, '_blank')">
+                <div class="feature-caption">杞子圆肉雪莲子炖桃胶</div>
+            </div>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+<div class="container" id="menu">
+    <h2>菜单</h2>
+    <img src="menu1.jpg" alt="菜单1" style="width: 80%; max-width: 600px; height: auto;">
+    <img src="menu2.jpg" alt="菜单2" style="width: 80%; max-width: 600px; height: auto;">
+</div>
+    <div class="container store-info" id="about">
+        <h2>About Us</h2>
+        <p>第一代聰嫂私房甜品创立于2004年，凭借独特的甜品口味迅速走红，吸引众多食客。后来被大型连锁集团收购，并扩展到多家分店。然而，2020年因疫情影响全面关闭。2023年，创始人决定复出，打造了全新的《聰C Dessert》，继续为甜品爱好者带来经典与创新的美味体验。</p>
+        <p>📍 地址: Shop 1D, G/F, Newman House, 35-45 Johnston Rd, Wan Chai, Hong Kong</p>
+        <p>📞 电话: 2495 3349</p>
+        <p>📧 邮箱: info@cdessert.hk</p>
+    </div>
+    <footer>
+        &copy; 2025 C Dessert | Follow us on social media: @CDessertHK
+    </footer>
+</body>
+</html>
